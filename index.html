@@ -1,333 +1,131 @@
 <!DOCTYPE html>
 <html lang="vi">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Máy tính - Nguyễn Thế Chung</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Menu Nước Ép</title>
     <style>
-      :root {
-        --bg: #0f1724;
-        --panel: #0b1220;
-        --accent: #06b6d4;
-        --btn: #1f2937;
-        --btn-light: #374151;
-        --text: #e6eef6;
-        --muted: #9aa6b2;
-        font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
-          "Helvetica Neue", Arial;
-      }
-      * {
-        box-sizing: border-box;
-      }
       body {
-        background: linear-gradient(180deg, #071226 0%, #071a2a 100%);
-        color: var(--text);
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 24px;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background: url("2.png") no-repeat center center fixed;
+        background-size: cover;
+        color: #222;
       }
-      .calculator {
-        width: 360px;
-        max-width: 96vw;
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.02),
-          rgba(255, 255, 255, 0.01)
-        );
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(2, 6, 23, 0.6);
-        padding: 18px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-      .display {
-        background: linear-gradient(
-          180deg,
-          rgba(255, 255, 255, 0.02),
-          rgba(255, 255, 255, 0.01)
-        );
-        border-radius: 10px;
-        padding: 14px;
-        min-height: 72px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-end;
-        gap: 6px;
-        border: 1px solid rgba(255, 255, 255, 0.03);
-      }
-      .history {
-        font-size: 0.85rem;
-        color: var(--muted);
-        max-width: 100%;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-      }
-      .result {
-        font-size: 1.6rem;
-        font-weight: 600;
-        word-break: break-all;
-      }
-      .buttons {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 10px;
-      }
-      button {
-        background: var(--btn);
-        color: var(--text);
-        border: 0;
-        padding: 16px;
-        border-radius: 10px;
-        font-size: 1.05rem;
-        cursor: pointer;
-        box-shadow: 0 4px 10px rgba(2, 6, 23, 0.45);
-        transition: transform 0.08s ease, box-shadow 0.08s;
-        user-select: none;
-      }
-      button:active {
-        transform: translateY(2px) scale(0.998);
-      }
-      .op {
-        background: linear-gradient(180deg, var(--btn-light), #111827);
-        font-weight: 600;
-      }
-      .eq {
-        background: linear-gradient(180deg, var(--accent), #0596a8);
-        color: #062022;
-        font-weight: 700;
-        grid-column: span 2;
-      }
-      .wide {
-        grid-column: span 2;
-      }
-      .secondary {
-        background: transparent;
-        border: 1px solid rgba(255, 255, 255, 0.03);
-        color: var(--muted);
-      }
-      .kbd-hint {
-        font-size: 0.8rem;
-        color: var(--muted);
+      header {
         text-align: center;
-        margin-top: 6px;
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.8);
+        border-radius: 10px;
+        margin: 20px auto;
+        width: 90%;
+        max-width: 900px;
       }
-      @media (max-width: 420px) {
-        .calculator {
-          padding: 12px;
-        }
-        button {
-          padding: 12px;
-          font-size: 1rem;
-        }
-        .result {
-          font-size: 1.3rem;
-        }
+      header h1 {
+        font-size: 40px;
+        margin: 0;
+      }
+      header p {
+        font-style: italic;
+        color: #444;
+      }
+      .time {
+        background-color: #fff;
+        display: inline-block;
+        padding: 5px 15px;
+        border-radius: 10px;
+        font-weight: bold;
+        color: #006d4f;
+        border: 2px solid #000;
+      }
+      .menu-section {
+        width: 90%;
+        max-width: 900px;
+        margin: 20px auto;
+        padding: 15px;
+        border-radius: 15px;
+        background-color: rgba(255, 255, 255, 0.9);
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      }
+      .menu-title {
+        font-size: 22px;
+        padding: 10px;
+        border-radius: 8px;
+        margin-bottom: 10px;
+        color: white;
+        font-weight: bold;
+      }
+      .orange {
+        background-color: #ff7b00;
+      }
+      .green {
+        background-color: #009944;
+      }
+      .menu-list {
+        list-style: none;
+        padding: 0;
+      }
+      .menu-list li {
+        display: flex;
+        justify-content: space-between;
+        padding: 5px 0;
+        border-bottom: 1px dotted #aaa;
+      }
+      .menu-list li span {
+        font-weight: bold;
+      }
+      footer {
+        text-align: center;
+        padding: 15px;
+        font-size: 14px;
+        color: #fff;
+        background: rgba(0, 0, 0, 0.6);
       }
     </style>
   </head>
   <body>
-    <div class="calculator" role="application" aria-label="Máy tính">
-      <div class="display" aria-live="polite">
-        <div class="history" id="history" aria-hidden="true"></div>
-        <div class="result" id="result">0</div>
-      </div>
+    <header>
+      <h1>MENU</h1>
+      <p>"1 ly nước ép cho ngày mới tràn đầy năng lượng"</p>
+      <div class="time">OPEN - CLOSE: 7:30 AM - 9:30 PM</div>
+    </header>
 
-      <div
-        class="buttons"
-        id="buttons"
-        role="group"
-        aria-label="Các phím máy tính"
-      >
-        <button class="secondary" data-action="clear" title="C">C</button>
-        <button class="secondary" data-action="back" title="Backspace">
-          ⌫
-        </button>
-        <button class="secondary" data-value="(">(</button>
-        <button class="secondary" data-value=")">)</button>
-
-        <button data-value="7">7</button>
-        <button data-value="8">8</button>
-        <button data-value="9">9</button>
-        <button class="op" data-value="/">÷</button>
-
-        <button data-value="4">4</button>
-        <button data-value="5">5</button>
-        <button data-value="6">6</button>
-        <button class="op" data-value="*">×</button>
-
-        <button data-value="1">1</button>
-        <button data-value="2">2</button>
-        <button data-value="3">3</button>
-        <button class="op" data-value="-">−</button>
-
-        <button data-value="0" class="wide">0</button>
-        <button data-value=".">.</button>
-        <button class="eq" data-action="equals">=</button>
-
-        <button class="secondary" data-action="copy">Sao chép</button>
-        <button class="secondary" data-action="neg">±</button>
-        <button class="op" data-value="+">+</button>
-      </div>
-
-      <div class="kbd-hint">
-        Phím: số, + - * / ( ) . — Enter = tính, Backspace xóa
-      </div>
+    <!-- Nước mía mix -->
+    <div class="menu-section">
+      <div class="menu-title orange">NƯỚC MÍA MIX</div>
+      <ul class="menu-list">
+        <li>Nước mía nguyên chất <span>10.000đ</span></li>
+        <li>Nước mía Dâu <span>12.000đ</span></li>
+        <li>Nước mía Cam <span>12.000đ</span></li>
+        <li>Nước mía Chanh dây <span>12.000đ</span></li>
+        <li>Nước mía Sầu riêng <span>15.000đ</span></li>
+      </ul>
     </div>
 
-    <script>
-      (function () {
-        const resultEl = document.getElementById("result");
-        const historyEl = document.getElementById("history");
-        let expr = ""; // biểu thức hiện tại
-        let lastResult = null;
+    <!-- Nước ép đồng giá -->
+    <div class="menu-section">
+      <div class="menu-title green">NƯỚC ÉP ĐỒNG GIÁ 15.000đ</div>
+      <ul class="menu-list">
+        <li>Nước Ép Cam</li>
+        <li>Nước Ép Ổi</li>
+        <li>Nước Ép Táo</li>
+        <li>Nước Ép Thơm</li>
+        <li>Nước Ép Dưa Hấu</li>
+        <li>Nước Ép Cà rốt</li>
+      </ul>
+    </div>
 
-        const safePattern = /^[0-9+\-*/().\s]+$/;
+    <!-- Nước giải khát -->
+    <div class="menu-section">
+      <div class="menu-title orange">NƯỚC GIẢI KHÁT 15.000đ</div>
+      <ul class="menu-list">
+        <li>Sting</li>
+        <li>Coca</li>
+        <li>Mirinda</li>
+      </ul>
+    </div>
 
-        function render() {
-          resultEl.textContent = expr === "" ? "0" : expr;
-        }
-
-        function append(s) {
-          // tránh khoảng trắng dư
-          expr += s;
-          render();
-        }
-
-        function clearAll() {
-          expr = "";
-          lastResult = null;
-          historyEl.textContent = "";
-          render();
-        }
-
-        function backspace() {
-          expr = expr.slice(0, -1);
-          render();
-        }
-
-        function safeEval(input) {
-          // Loại bỏ khoảng trắng thừa
-          const cleaned = input.replace(/\s+/g, "");
-          if (cleaned === "") throw "Empty";
-          // Kiểm tra chỉ cho phép các ký tự an toàn
-          if (!safePattern.test(cleaned))
-            throw "Biểu thức chứa ký tự không hợp lệ.";
-          // Không cho phép hai toán tử liên tiếp như "**" (dù * được), hoặc bắt đầu bằng toán tử hợp lệ khác ')'
-          if (/[^0-9.)]\*{2,}|^(\*|\/)/.test(cleaned))
-            throw "Biểu thức không hợp lệ.";
-          // Sử dụng Function để thực thi biểu thức toán học
-          // (An toàn tương đối vì đã lọc ký tự, chỉ chạy trong trình duyệt người dùng)
-          // Thêm xử lý chia cho 0
-          const value = Function('"use strict"; return (' + cleaned + ")")();
-          if (!isFinite(value))
-            throw "Kết quả không hợp lệ (chia cho 0 hoặc overflow).";
-          return value;
-        }
-
-        function evaluate() {
-          try {
-            const val = safeEval(expr);
-            historyEl.textContent = expr + " =";
-            expr = String(val);
-            lastResult = val;
-            render();
-          } catch (e) {
-            resultEl.textContent = "Lỗi";
-            console.error(e);
-            setTimeout(render, 900);
-          }
-        }
-
-        function copyResult() {
-          const text = expr === "" ? "0" : expr;
-          navigator.clipboard
-            ?.writeText(text)
-            .then(() => {
-              // optional feedback
-            })
-            .catch(() => {});
-        }
-
-        // Nút click
-        document.getElementById("buttons").addEventListener("click", (e) => {
-          const btn = e.target.closest("button");
-          if (!btn) return;
-          const val = btn.getAttribute("data-value");
-          const action = btn.getAttribute("data-action");
-
-          if (action === "clear") {
-            clearAll();
-            return;
-          }
-          if (action === "back") {
-            backspace();
-            return;
-          }
-          if (action === "equals") {
-            evaluate();
-            return;
-          }
-          if (action === "copy") {
-            copyResult();
-            return;
-          }
-          if (action === "neg") {
-            // đổi dấu: nếu là số hiện tại thì đổi, còn khác thì thêm -
-            if (expr === "") {
-              expr = "-";
-              render();
-              return;
-            }
-            try {
-              const v = safeEval(expr);
-              expr = String(-v);
-              render();
-            } catch {
-              // fallback: thêm -
-              expr = "-" + expr;
-              render();
-            }
-            return;
-          }
-
-          if (val !== null) {
-            // map × ÷ hiển thị => toán tử thực tế
-            append(val);
-          }
-        });
-
-        // Phím bàn phím
-        window.addEventListener("keydown", (e) => {
-          if (e.key === "Enter" || e.key === "=") {
-            e.preventDefault();
-            evaluate();
-            return;
-          }
-          if (e.key === "Backspace") {
-            e.preventDefault();
-            backspace();
-            return;
-          }
-          if (e.key === "Escape") {
-            clearAll();
-            return;
-          }
-          // cho phép số, toán tử, dấu ngoặc, dấu chấm
-          const allowed = "0123456789+-*/() .";
-          if (allowed.includes(e.key)) {
-            e.preventDefault();
-            append(e.key);
-          }
-        });
-
-        // khởi tạo
-        render();
-      })();
-    </script>
+    <footer>📞 081 777 0866 - 055 977 2866 | 📍 Khóm 7, Trần Văn Thời</footer>
   </body>
 </html>
